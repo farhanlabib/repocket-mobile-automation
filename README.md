@@ -1,6 +1,6 @@
 # 📱 Repocket App Mobile Automation Framework
 
-Welcome to the automation framework for testing the **Repocket App** bandwidth sharing functionality! 🚀  
+Welcome to the automation framework for testing the **Repocket App** bandwidth sharing functionality! 
 This project automates critical user flows using **WebdriverIO**, **Appium**, **Mocha**, and **JavaScript**.
 
 ---

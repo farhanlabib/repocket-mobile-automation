@@ -60,7 +60,7 @@ npx appium
 6. **Run your tests:**
 
 ```bash
-npx wdio run wdio.conf.js
+npm run test
 ```
 
 7. **Generate Allure Report:**
@@ -122,5 +122,5 @@ Senior Specialist, QA Engineer
 |:------|:---------|
 | Install project dependencies | `npm install` |
 | Run Appium server | `npx appium` |
-| Run test cases | `npx wdio run wdio.conf.js` |
+| Run test cases | `npx run test` |
 | Generate & open Allure report | `npm run report` |

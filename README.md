@@ -157,7 +157,6 @@ npm run report
 **Farhan Labib**  
 Senior Specialist QA Engineer
 
-Built this automation framework as part of a professional interview challenge.  
 ✅ [GitHub Repository](https://github.com/farhanlabib/repocket-mobile-automation)  
 📹 [Test Execution Video](https://jam.dev/c/a9e89fa1-d636-4978-92ff-ae83e3213af2)
 

@@ -1,34 +1,66 @@
-# Repocket App Mobile Automation Framework
+# 📱 Repocket App Mobile Automation Framework
 
-Welcome to the automation framework for testing the **Repocket App** bandwidth sharing functionality! 🚀
-
-This project automates critical user flows using **WebdriverIO**, **Appium**, and **Mocha** with **JavaScript**.
+Welcome to the automation framework for testing the **Repocket App** bandwidth sharing functionality! 🚀  
+This project automates critical user flows using **WebdriverIO**, **Appium**, **Mocha**, and **JavaScript**.
 
 ---
 
-## 📊 Project Structure
+## 📂 Project Structure
 
 ```bash
 mobile-automation/
 ├── node_modules/
 ├── test/
 │   ├── specs/
-│   │   └─ test.e2e.js         # Main test file
+│   │   └─ test.e2e.js           # Main test scenarios
 │   ├── pageobjects/
-│   │   ├─ page.js             # Base Page class
-│   │   ├─ loginPage.js         # Login screen actions
-│   │   ├─ onboardingPage.js    # Onboarding flow actions
-│   │   └─ homePage.js          # Home screen actions
-│   └─ utils/
-│       └─ deviceUtils.js      # Device control utilities (internet toggle)
+│   │   ├─ page.js               # Base Page class
+│   │   ├─ loginPage.js          # Login screen actions
+│   │   ├─ onboardingPage.js     # Onboarding flow actions
+│   │   └─ homePage.js           # Home screen actions
+│   └── utils/
+│       └─ deviceUtils.js        # Device control utilities (like internet toggle)
 ├── package.json
-├── wdio.conf.js          # WDIO Configuration
-├── README.md             # (You are here!)
+├── wdio.conf.js                 # WebdriverIO Configuration
+├── README.md                    # (You are here!)
 ```
 
 ---
 
-## 🔧 Setup Instructions
+## 🛠️ Prerequisites
+
+Make sure you have the following installed and configured before running the tests:
+
+| Tool | Purpose |
+|:-----|:--------|
+| Node.js (v18+) | JavaScript runtime |
+| NPM | Dependency manager (comes with Node.js) |
+| Java JDK | Required for Appium |
+| Android Studio | Required for Emulator and SDK tools |
+| Appium | Mobile automation server |
+| WebdriverIO | Automation framework |
+
+---
+
+## ⚙️ Environment Setup
+
+**Mandatory Environment Variables:**
+
+| Variable | What It Should Point To |
+|:---------|:------------------------|
+| `JAVA_HOME` | Path to your Java JDK (e.g., `/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home`) |
+| `ANDROID_HOME` | Path to your Android SDK (e.g., `/Users/yourusername/Library/Android/sdk`) |
+
+**Also Add to Your PATH:**
+- `$ANDROID_HOME/platform-tools`
+- `$ANDROID_HOME/emulator`
+- `$JAVA_HOME/bin`
+
+✅ Ensure emulator is running before starting the tests.
+
+---
+
+## 🚀 How to Run the Project
 
 1. **Clone the repository:**
 
@@ -37,13 +69,13 @@ git clone https://github.com/farhanlabib/repocket-mobile-automation.git
 cd mobile-automation
 ```
 
-2. **Install dependencies:**
+2. **Install project dependencies:**
 
 ```bash
 npm install
 ```
 
-3. **Install Allure CLI globally:**
+3. **Install Allure CLI globally (for report generation):**
 
 ```bash
 npm install -g allure-commandline --save-dev
@@ -55,72 +87,79 @@ npm install -g allure-commandline --save-dev
 npx appium
 ```
 
-5. **Make sure Android emulator is running!**
-
-6. **Run your tests:**
+5. **Run your test cases:**
 
 ```bash
 npm run test
 ```
 
-7. **Generate Allure Report:**
-
-After running tests, to generate and open the report:
+6. **Generate and open Allure report:**
 
 ```bash
 npm run report
 ```
 
-*("report" script automatically cleans old reports, generates new one, and opens it.)*
+*(This command will clean old results, generate new Allure report, and open it automatically.)*
 
 ---
 
-## 🔬 Technologies Used
+## 🧲 What This Test Automation Covers
 
-- **WebdriverIO**: Browser and mobile automation framework.
-- **Appium**: Native mobile app automation.
-- **Mocha**: Test framework.
-- **Allure Reports**: Rich test reports.
-- **Node.js**: Backend environment.
-
-
----
-
-## 🔍 Key Features
-
-- **Page Object Model (POM)** structure for scalability and easy maintenance.
-- **Positive & Negative tests** for bandwidth sharing.
-- **Device Internet Control** via helper functions.
-- **Error Handling** and **Toast Validation**.
-- **Allure HTML Reports** with screenshots.
-- **Pre-setup hooks and post-cleanup ready**.
-
+- **Login Flow**
+  - Enter email and password.
+  - Submit login and land on homepage.
+- **Onboarding Flow**
+  - Tap 'Next' 2 times.
+  - Tap 'Start Now'.
+  - Handle 'Start App on Boot' permission ('Enable' or 'Not Now').
+- **HomePage Bandwidth Sharing**
+  - Verify bandwidth sharing status (Connected / Stop Sharing).
+- **Negative Testing**
+  - Disable internet from device.
+  - Try enabling bandwidth sharing.
+  - Verify **'No Internet Connection'** toast appears.
 
 ---
 
-## 🌐 Future Improvements
+## ✨ Technologies Used
 
-- Integrate with GitHub Actions / Jenkins for CI/CD pipeline.
-- Add performance monitoring (transition time measurement).
-- Add API level validation (if backend APIs available).
-- Expand negative test coverage (e.g., airplane mode cases).
+- WebdriverIO
+- Appium
+- Mocha
+- Allure Reporting
+- JavaScript (Node.js)
 
 ---
 
-## 👋 Author
+## 📊 Test Reporting
+
+- **Allure** report generation integrated.
+- After each run, you can easily generate a beautiful, detailed test report.
+- To open the latest report:
+
+```bash
+npm run report
+```
+
+---
+
+## 💡 Future Enhancements
+
+- CI/CD integration (GitHub Actions / Jenkins).
+- Add deeper network scenarios (airplane mode, 2G/3G mode testing).
+- API validations for backend connectivity.
+- Performance metrics (app load and transition timings).
+
+---
+
+## 👨‍💻 Author
 
 **Farhan Labib**  
-Senior Specialist, QA Engineer  
+Senior Specialist QA Engineer
 
-(Framework built during interview automation challenge)
+Built this automation framework as part of a professional interview challenge.  
+✅ [GitHub Repository](https://github.com/farhanlabib/repocket-mobile-automation)  
+📹 [Test Execution Video](https://jam.dev/c/a9e89fa1-d636-4978-92ff-ae83e3213af2)
 
 ---
 
-## 🔍 Important Commands
-
-| Task | Command |
-|:------|:---------|
-| Install project dependencies | `npm install` |
-| Run Appium server | `npx appium` |
-| Run test cases | `npx run test` |
-| Generate & open Allure report | `npm run report` |
